@@ -11,3 +11,5 @@ string_to_microseconds(const char *str);
 long long
 string_to_milliseconds(const char *str);
 ```
+
+For usage view the [tests](https://github.com/visionmedia/ms.c/blob/master/ms.c#L52)
