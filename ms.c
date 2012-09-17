@@ -10,6 +10,15 @@
 #include <stdio.h>
 #include "ms.h"
 
+// microseconds
+
+#define US_SEC 1000000
+#define US_MIN 60 * US_SEC
+#define US_HOUR 60 * US_MIN
+#define US_DAY 24 * US_HOUR
+#define US_WEEK 7 * US_HOUR
+#define US_YEAR 52 * US_WEEK
+
 // milliseconds
 
 #define MS_SEC 1000
@@ -30,10 +39,12 @@ string_to_microseconds(const char *str) {
   long long val = strtoll(str, NULL, 10);
   if (!val) return -1;
   switch (str[len - 1]) {
-    case 's': return  'm' == str[len - 2] ? val * 1000 : val * 1000000;
-    case 'm': return val * 60000000;
-    case 'h': return val * 3600000000;
-    case 'd': return val * 86400000000;
+    case 's': return  'm' == str[len - 2] ? val * 1000 : val * US_SEC;
+    case 'm': return val * US_MIN;
+    case 'h': return val * US_HOUR;
+    case 'd': return val * US_DAY;
+    case 'w': return val * US_WEEK;
+    case 'y': return val * US_YEAR;
     default:  return val;
   }
 }
