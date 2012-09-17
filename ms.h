@@ -14,13 +14,6 @@
 #define MS_MAX 256
 #endif
 
-// aliases
-
-#define strtous string_to_microseconds
-#define strtoms string_to_milliseconds
-#define mstostr milliseconds_to_string
-#define mstolstr milliseconds_to_long_string
-
 // prototypes
 
 long long
