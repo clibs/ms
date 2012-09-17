@@ -50,9 +50,11 @@ string_to_milliseconds(const char *str) {
   if (!val) return -1;
   switch (str[len - 1]) {
     case 's': return  'm' == str[len - 2] ? val : val * 1000;
-    case 'm': return val * 60 * 1000;
-    case 'h': return val * 60 * 60 * 1000;
-    case 'd': return val * 24 * 60 * 60 * 1000;
+    case 'm': return val * MS_MIN;
+    case 'h': return val * MS_HOUR;
+    case 'd': return val * MS_DAY;
+    case 'w': return val * MS_WEEK;
+    case 'y': return val * MS_YEAR;
     default:  return val;
   }
 }
