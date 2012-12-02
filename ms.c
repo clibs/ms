@@ -16,7 +16,7 @@
 #define US_MIN 60 * US_SEC
 #define US_HOUR 60 * US_MIN
 #define US_DAY 24 * US_HOUR
-#define US_WEEK 7 * US_HOUR
+#define US_WEEK 7 * US_DAY
 #define US_YEAR 52 * US_WEEK
 
 // milliseconds
