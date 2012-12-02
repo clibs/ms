@@ -21,12 +21,12 @@
 
 // milliseconds
 
-#define MS_SEC 1000
+#define MS_SEC (long long)1000
 #define MS_MIN 60 * MS_SEC
 #define MS_HOUR 60 * MS_MIN
 #define MS_DAY 24 * MS_HOUR
 #define MS_WEEK 7 * MS_DAY
-#define MS_YEAR 52 * (long long)MS_WEEK
+#define MS_YEAR 52 * MS_WEEK
 
 /*
  * Convert the given `str` representation to microseconds,
