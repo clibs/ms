@@ -12,13 +12,13 @@
 
 // microseconds
 
-#define US_MSEC 1000
+#define US_MSEC (long long)1000
 #define US_SEC 1000 * US_MSEC
 #define US_MIN 60 * US_SEC
-#define US_HOUR 60 * (long long)US_MIN
-#define US_DAY 24 * (long long)US_HOUR
-#define US_WEEK 7 * (long long)US_DAY
-#define US_YEAR 52 * (long long)US_WEEK
+#define US_HOUR 60 * US_MIN
+#define US_DAY 24 * US_HOUR
+#define US_WEEK 7 * US_DAY
+#define US_YEAR 52 * US_WEEK
 
 // milliseconds
 
