@@ -1,6 +1,9 @@
 
 # ms
 
+  Convert strings like "15s" to seconds, milliseconds, or microseconds,
+  and convert milliseconds to strings ("300ms", "5ms") or long strings ("5 seconds", "1 month").
+
 ## Installation
 
   Install with [clib](https://github.com/clibs/clib):
