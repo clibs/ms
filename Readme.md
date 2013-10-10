@@ -1,5 +1,15 @@
 
-# ms.c
+# ms
+
+## Installation
+
+  Install with [clib](https://github.com/clibs/clib):
+
+```
+$ clib install clibs/ms
+```
+
+## API
 
 ```c
 long long
@@ -18,4 +28,4 @@ char *
 milliseconds_to_long_string(long long ms);
 ```
 
-For usage view the [tests](https://github.com/visionmedia/ms.c/blob/master/ms.c#L52)
+For usage view the [tests](https://github.com/clibs/ms/blob/master/ms.c#L52)
