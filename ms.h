@@ -5,8 +5,8 @@
 // Copyright (c) 2012 TJ Holowaychuk <tj@vision-media.ca>
 //
 
-#ifndef MS
-#define MS
+#ifndef MS_H
+#define MS_H 1
 
 // max buffer length
 
@@ -31,4 +31,4 @@ milliseconds_to_string(long long ms);
 char *
 milliseconds_to_long_string(long long ms);
 
-#endif
+#endif // MS_H
