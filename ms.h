@@ -8,12 +8,6 @@
 #ifndef MS_H
 #define MS_H 1
 
-// max buffer length
-
-#ifndef MS_MAX
-#define MS_MAX 256
-#endif
-
 // prototypes
 
 long long
