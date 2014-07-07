@@ -26,3 +26,4 @@ char *
 milliseconds_to_long_string(long long ms);
 
 #endif // MS_H
+
