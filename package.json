@@ -7,6 +7,6 @@
   "license": "MIT",
   "src": ["ms.c", "ms.h"],
   "dependencies": {
-    "littlstar/asprintf.c": "0.0.2"
+    "littlstar/asprintf.c": "0.0.3"
   }
 }
