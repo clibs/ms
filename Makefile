@@ -1,16 +1,19 @@
 
-CFLAGS = -std=c99 -Wall -Wextra
+CFLAGS = -std=c99 -Wall -Wextra -Ideps
+SRC = ms.c
+DEPS = $(wildcard deps/*/*.c)
+OBJS = ms.o $(DEPS:.c=.o)
 
 check: test
 	@./test
 
-test: test.o ms.o
+test: test.o $(OBJS)
 	$(CC) $^ -o $@ $(CFLAGS)
 
 %.o: %.c
 	$(CC) $< -c -o $@ $(CFLAGS)
 
 clean:
-	rm -f ms.o test.o test
+	rm -f $(OBJS) test.o test
 
 .PHONY: check clean

@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "asprintf/asprintf.h"
 #include "ms.h"
 
 // microseconds
@@ -89,8 +90,7 @@ string_to_seconds(const char *str) {
 
 char *
 milliseconds_to_string(long long ms) {
-  char *str = malloc(MS_MAX);
-  if (!str) return NULL;
+  char *str = NULL;
   long long div = 1;
   char *fmt;
 
@@ -101,7 +101,9 @@ milliseconds_to_string(long long ms) {
   else if (ms < MS_WEEK) { fmt = "%lldd"; div = MS_DAY; }
   else if (ms < MS_YEAR) { fmt = "%lldw"; div = MS_WEEK; }
   else { fmt = "%lldy"; div = MS_YEAR; }
-  snprintf(str, MS_MAX, fmt, ms / div);
+  if (-1 == asprintf(&str, fmt, ms / div)) {
+    return NULL;
+  }
 
   return str;
 }
@@ -116,11 +118,10 @@ milliseconds_to_long_string(long long ms) {
   long long div;
   char *name;
 
-  char *str = malloc(MS_MAX);
-  if (!str) return NULL;
+  char *str = NULL;
 
   if (ms < MS_SEC) {
-    sprintf(str, "less than one second");
+    if (-1 == asprintf(&str, "less than one second")) return NULL;
     return str;
   }
 
@@ -136,13 +137,9 @@ milliseconds_to_long_string(long long ms) {
     ? "%lld %s"
     : "%lld %ss";
 
-  snprintf(str, MS_MAX, fmt, val, name);
+  if (-1 == asprintf(&str, fmt, val, name)) {
+    return NULL;
+  }
+
   return str;
 }
-
-// tests
-
-#ifdef TEST_MS
-
-
-#endif
